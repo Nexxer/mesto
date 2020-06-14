@@ -1,0 +1,17 @@
+@import url('./__button-save/popup__button-save.css');
+@import url('./__container/popup__container.css');
+@import url('./__name/popup__name.css');
+@import url('./__profession/popup__profession.css');
+@import url('./__title/popup__tiwtle.css');
+.popup {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  display: none;
+}

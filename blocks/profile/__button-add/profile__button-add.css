@@ -7,11 +7,10 @@
   background-color: #000;
   border: 2px solid #FFFFFF;
   border-radius: 2px;
-  position: absolute;
-  right: 0;
-  top: 29%;
   cursor: pointer;
   outline: none;
+  transition-duration: 0.8s;
+  transition-property: opacity;
 }
 
 .profile__button-add:hover {
@@ -20,7 +19,6 @@
 
 @media screen and (max-width: 750px) {
   .profile__button-add {
-    position: relative;
     width: 282px;
   }
 }

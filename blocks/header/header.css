@@ -1,21 +1,14 @@
+@import url('./__logo/header__logo.css');
 .header {
-  height: 72px;
+  padding-bottom: 72px;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   margin-bottom: 40px;
   box-sizing: border-box;
 }
 
-.header__logo {
-  height: 33px;
-}
-
 @media screen and (max-width: 750px) {
   .header {
-    padding: 0px 0px 0px 27px;
-    height: 56px;
+    padding: 0px 0px 56px 27px;
     margin-bottom: 42px;
-  }
-  .header__logo {
-    height: 24px;
   }
 }

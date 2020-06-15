@@ -10,16 +10,10 @@
   line-height: 22px;
   text-align: center;
   cursor: pointer;
+  transition-duration: 0.8s;
+  transition-property: background-color;
 }
 
 .popup__button-save:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.popup__button-close {
-  width: 26px;
-  position: absolute;
-  top: -26px;
-  right: -26px;
-  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
 }

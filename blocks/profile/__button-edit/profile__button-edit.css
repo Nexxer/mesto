@@ -8,6 +8,8 @@
   cursor: pointer;
   border-radius: 0;
   outline: none;
+  transition-duration: 0.8s;
+  transition-property: opacity;
 }
 
 .profile__button-edit:hover {

@@ -9,5 +9,7 @@
 @media screen and (max-width: 619px) {
   .profile__name {
     font-size: 27px;
+    padding-top: 14px;
+    padding-right: 0px;
   }
 }

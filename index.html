@@ -31,56 +31,58 @@
     </section>
 
     <!-- Места -->
-    <ul class="elements">
+    <section class="elements">
+      <ul class="elements__list">
 
-      <!-- Карточка 1 -->
-      <li class="element"> <img class="element__image" src="./image/1.png" alt="Фото места">
-        <div class="element__info">
-          <h2 class="element__title">Карачаевск</h2>
-          <button type="button" class="elememt__like"></button>
-        </div>
-      </li>
+        <!-- Карточка 1 -->
+        <li class="element"> <img class="element__image" src="./image/1.png" alt="Фото места">
+          <div class="element__info">
+            <h2 class="element__title">Карачаевск</h2>
+            <button type="button" class="elememt__like"></button>
+          </div>
+        </li>
 
-      <!-- Карточка 2 -->
-      <li class="element"> <img class="element__image" src="./image/3.png" alt="Фото места">
-        <div class="element__info">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button type="button" class="elememt__like"></button>
-        </div>
-      </li>
+        <!-- Карточка 2 -->
+        <li class="element"> <img class="element__image" src="./image/3.png" alt="Фото места">
+          <div class="element__info">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button type="button" class="elememt__like"></button>
+          </div>
+        </li>
 
-      <!-- Карточка 3 -->
-      <li class="element"> <img class="element__image" src="./image/2.png" alt="Фото места">
-        <div class="element__info">
-          <h2 class="element__title">Домбай</h2>
-          <button type="button" class="elememt__like"></button>
-        </div>
-      </li>
+        <!-- Карточка 3 -->
+        <li class="element"> <img class="element__image" src="./image/2.png" alt="Фото места">
+          <div class="element__info">
+            <h2 class="element__title">Домбай</h2>
+            <button type="button" class="elememt__like"></button>
+          </div>
+        </li>
 
-      <!-- Карточка 4 -->
-      <li class="element"> <img class="element__image" src="./image/3.png" alt="Фото места">
-        <div class="element__info">
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button type="button" class="elememt__like"></button>
-        </div>
-      </li>
+        <!-- Карточка 4 -->
+        <li class="element"> <img class="element__image" src="./image/3.png" alt="Фото места">
+          <div class="element__info">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button type="button" class="elememt__like"></button>
+          </div>
+        </li>
 
-      <!-- Карточка 5 -->
-      <li class="element"> <img class="element__image" src="./image/2.png" alt="Фото места">
-        <div class="element__info">
-          <h2 class="element__title">Домбай</h2>
-          <button type="button" class="elememt__like"></button>
-        </div>
-      </li>
+        <!-- Карточка 5 -->
+        <li class="element"> <img class="element__image" src="./image/2.png" alt="Фото места">
+          <div class="element__info">
+            <h2 class="element__title">Домбай</h2>
+            <button type="button" class="elememt__like"></button>
+          </div>
+        </li>
 
-      <!-- Карточка 6 -->
-      <li class="element"> <img class="element__image" src="./image/1.png" alt="Фото места">
-        <div class="element__info">
-          <h2 class="element__title">Карачаево-Черкессия</h2>
-          <button type="button" class="elememt__like"></button>
-        </div>
-      </li>
-    </ul>
+        <!-- Карточка 6 -->
+        <li class="element"> <img class="element__image" src="./image/1.png" alt="Фото места">
+          <div class="element__info">
+            <h2 class="element__title">Карачаево-Черкессия</h2>
+            <button type="button" class="elememt__like"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
   </main>
 
   <!-- Подвал -->
@@ -96,10 +98,9 @@
       <form id="form-profile">
         <input type="text" name="surname" class="popup__name" value="" placeholder="Имя">
         <input type="text" name="profession" class="popup__profession" value="" placeholder="О себе">
-        <!-- <input type="button" class="popup__button-save" value="Сохранить"> -->
         <button type="submit" class="popup__button-save">Сохранить</button>
       </form>
-      <img class="popup__button-close" src="./image/CloseIcon.svg" alt="иконка закрыть">
+      <button class="popup__button-close"></button>
     </div>
   </div>
   <script src="./scripts/index.js"></script>

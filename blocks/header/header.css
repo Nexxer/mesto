@@ -1,6 +1,6 @@
 @import url('./__logo/header__logo.css');
 .header {
-  padding-bottom: 72px;
+  padding-bottom: 36px;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   margin-bottom: 40px;
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 750px) {
   .header {
-    padding: 0px 0px 56px 27px;
+    padding: 0px 0px 27px 27px;
     margin-bottom: 42px;
   }
 }

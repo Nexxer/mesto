@@ -1,15 +1,11 @@
+@import url('./__list/elements__list.css');
 .elements {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(282px, 282px));
-  grid-gap: 21px 18px;
   padding: 51px 0 66px;
-  justify-content: center;
   margin: 0;
-  
 }
 
 @media screen and (max-width: 619px) {
   .elements {
-    padding-bottom: 48px;
+    padding: 36px 0 48px;
   }
 }

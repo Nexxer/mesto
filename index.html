@@ -35,7 +35,8 @@
       <ul class="elements__list">
 
         <!-- Карточка 1 -->
-        <li class="element"> <img class="element__image" src="./image/1.png" alt="Фото места">
+        <li class="element"> <img class="element__image" src="./image/4.jpg" alt="Фото места">
+          <button class="element__delete"></button>
           <div class="element__info">
             <h2 class="element__title">Карачаевск</h2>
             <button type="button" class="elememt__like"></button>
@@ -90,10 +91,9 @@
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
 
-  <!-- Модальное окно -->
-  <div class="popup">
+  <!-- Модальное окно профиля-->
+  <div class="popup popup_type_profile">
     <div class="popup__container">
-
       <h2 class="popup__title">Редактировать профиль</h2>
       <form id="form-profile">
         <input type="text" name="surname" class="popup__name" value="" placeholder="Имя">
@@ -103,6 +103,30 @@
       <button class="popup__button-close"></button>
     </div>
   </div>
+
+  <!-- Модальное окно добавления места -->
+  <div class="popup popup_type_add-place">
+    <div class="popup__container">
+      <h2 class="popup__title">Новое место</h2>
+      <form id="form-profile">
+        <input type="text" name="place-name" class="popup__name" value="" placeholder="Название">
+        <input type="text" name="place-photo" class="popup__profession" value="" placeholder="Ссылка на картинку">
+        <button type="submit" class="popup__button-save">Сохранить</button>
+      </form>
+      <button class="popup__button-close popup__button-close_for_place"></button>
+    </div>
+  </div>
+
+  <!-- Модальное окно просмотра фото -->
+  <div class="popup popup_type_photo">
+    <figure class="popup__content">
+      <img class="popup__image" src="./image/4.jpg" alt="Фото места">
+      <figcaption class="popup__caption">LLorem</figcaption>
+      <button class="popup__button-close popup__button-close_for_img"></button>
+    </figure>
+
+  </div>
+
   <script src="./scripts/index.js"></script>
 </body>
 

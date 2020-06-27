@@ -4,8 +4,10 @@
 @import url('./__name/popup__name.css');
 @import url('./__profession/popup__profession.css');
 @import url('./__title/popup__title.css');
+
 .popup {
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
   height: 100vh;
   width: 100vw;
   position: fixed;
@@ -14,5 +16,43 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+}
+
+/* место */
+.popup_type_add-place {}
+
+.popup__button-close_for_place {}
+
+
+/* фото */
+.popup_type_photo {}
+
+.popup__image {
+  max-height: 75vh;
+  max-width: 75vw;
+
+}
+
+.popup__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__button-close_for_img {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+}
+
+.popup__caption {
+  margin: 0;
+  font-size: 12px;
+  line-height: 15px;
+  color: #FFFFFF;
+  padding-top: 10px;
+
 }

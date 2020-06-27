@@ -11,4 +11,6 @@
   background-size: contain;
   outline: none;
   border: none;
+  z-index: 1;
 }
+

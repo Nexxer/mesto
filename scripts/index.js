@@ -7,13 +7,12 @@ const popupButtonCloseImg = document.querySelector('.popup__button-close_for_img
 const ButtonAddPlace = document.querySelector('.profile__button-add');
 const popupButtonAddPlace = document.querySelector('.popup_type_add-place')
 const popupButtonClosePlace = document.querySelector('.popup__button-close_for_place');
-
-
 const nameInput = document.querySelector('.popup__name');
 const jobInput = document.querySelector('.popup__profession');
 const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
 const formElement = document.querySelector('#form-profile');
+const placeElement = document.querySelector('.elememt__like')
 
 function PopupToggle() {
   // Открытие и закрытие popup'a классом
@@ -57,5 +56,11 @@ ButtonAddPlace.addEventListener('click', function () {
 });
 // Закрываем добавление места по крестику
 popupButtonClosePlace.addEventListener('click', function () {
-  popupButtonAddPlace.classList.remove('popup_opened');
+  popupButtonAddPlace.classList.toggle('popup_opened');
+});
+
+// Меняем иконку лайка при клике
+placeElement.addEventListener('click', function () {
+  console.log('Da');
+  placeElement.classList.toggle('elememt__like_active');
 });

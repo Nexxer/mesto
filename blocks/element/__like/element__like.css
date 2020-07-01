@@ -1,4 +1,4 @@
-.elememt__like {
+.element__like {
   background-image: url('./../../../image/like.svg');
   background-repeat: no-repeat;
   border: none;
@@ -13,6 +13,6 @@
 
 }
 
-.elememt__like:hover {
+.element__like:hover {
   opacity: 0.6;
 }

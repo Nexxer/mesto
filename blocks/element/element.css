@@ -1,8 +1,12 @@
 @import url('./__image/element__image.css');
 @import url('./__info/element__info.css');
 @import url('./__like/element__like.css');
+@import url('./__like/_active/element__like_active.css');
 @import url('./__title/element__title.css');
+@import url('./__delete/element__delete.css');
+
 .element {
+  position: relative;
   border-radius: 10px;
   background-color: #fff;
   display: flex;
@@ -10,3 +14,4 @@
   width: 100%;
   list-style: none;
 }
+

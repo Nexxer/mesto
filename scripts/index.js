@@ -4,8 +4,8 @@ const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
 const popupProfile = document.querySelector('.popup_type_profile');
 const formPopupProfile = popupProfile.querySelector('#form-profile');
-const nameInputProfile = formPopupProfile.querySelector('.popup__name');
-const jobInputProfile = formPopupProfile.querySelector('.popup__compl');
+const nameInputProfile = formPopupProfile.querySelector('#profile-name');
+const jobInputProfile = formPopupProfile.querySelector('#profile-profession');
 
 // Добавление места
 const popupAddPlace = document.querySelector('.profile__button-add');

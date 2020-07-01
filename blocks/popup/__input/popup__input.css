@@ -1,5 +1,4 @@
-.popup__compl {
-  margin: 28px 0 48px;
+.popup__input {
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 14px;
@@ -8,7 +7,7 @@
   width: 100%;
 }
 
-.popup__compl:focus {
+.popup__input:focus {
   border: 1px solid #5d8ffb;
   outline: none;
   border-radius: 5px;

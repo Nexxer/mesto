@@ -1,7 +1,9 @@
 @import url('./__image/element__image.css');
 @import url('./__info/element__info.css');
 @import url('./__like/element__like.css');
+@import url('./__like/_active/element__like_active.css');
 @import url('./__title/element__title.css');
+@import url('./__delete/element__delete.css');
 
 .element {
   position: relative;
@@ -13,24 +15,3 @@
   list-style: none;
 }
 
-.element__delete {
-  background-image: url('./../../image/DeleteIcon.svg');
-  position: absolute;
-  right: 15px;
-  top: 18px;
-  height: 19px;
-  width: 18px;
-  background-repeat: no-repeat;
-  border: none;
-  box-sizing: border-box;
-  background-color: transparent;
-  background-position: center;
-  cursor: pointer;
-  outline: none;
-  transition-duration: 0.8s;
-  transition-property: opacity;
-}
-
-.element__delete:hover {
-  opacity: 0.6;
-}

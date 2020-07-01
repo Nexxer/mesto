@@ -1,18 +1,21 @@
-.elememt__like {
-  background-image: url('./../../../image/like.svg');
+.element__delete {
+  background-image: url('./../../../image/DeleteIcon.svg');
+  position: absolute;
+  right: 15px;
+  top: 18px;
+  height: 19px;
+  width: 18px;
   background-repeat: no-repeat;
   border: none;
   box-sizing: border-box;
   background-color: transparent;
-  width: 21px;
   background-position: center;
   cursor: pointer;
   outline: none;
   transition-duration: 0.8s;
   transition-property: opacity;
-
 }
 
-.elememt__like:hover {
+.element__delete:hover {
   opacity: 0.6;
 }

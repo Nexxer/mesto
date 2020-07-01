@@ -2,8 +2,12 @@
 @import url('./__button-close/popup__button-close.css');
 @import url('./__container/popup__container.css');
 @import url('./__name/popup__name.css');
-@import url('./__profession/popup__profession.css');
+@import url('./__compl/popup__compl.css');
 @import url('./__title/popup__title.css');
+@import url('./__image/popup__image.css');
+@import url('./__content/popup__content.css');
+@import url('./__button-close/_for_img/popup__button-close_for_img.css');
+@import url('./__caption/popup__caption.css');
 
 .popup {
   background-color: rgba(0, 0, 0, 0.5);
@@ -19,40 +23,4 @@
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.3s, opacity 0.3s linear;
-}
-
-/* место */
-.popup_type_add-place {}
-
-.popup__button-close_for_place {}
-
-
-/* фото */
-.popup_type_photo {}
-
-.popup__image {
-  max-height: 75vh;
-  max-width: 75vw;
-
-}
-
-.popup__content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.popup__button-close_for_img {
-  position: absolute;
-  top: -50px;
-  right: -50px;
-}
-
-.popup__caption {
-  margin: 0;
-  font-size: 12px;
-  line-height: 15px;
-  color: #FFFFFF;
-  padding-top: 10px;
-
 }

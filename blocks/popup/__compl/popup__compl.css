@@ -1,4 +1,4 @@
-.popup__profession {
+.popup__compl {
   margin: 28px 0 48px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-.popup__profession:focus {
+.popup__compl:focus {
   border: 1px solid #5d8ffb;
   outline: none;
   border-radius: 5px;

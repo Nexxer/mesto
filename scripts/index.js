@@ -51,6 +51,15 @@ const closePopupPlace = function (evt) {
   popupToggle(popupPlace);
 };
 
+//Закрытие попапов через 'Esc'
+document.addEventListener('keydown', (evt) => {
+  const popup = document.querySelector('.popup_opened')
+  if (evt.key === 'Escape' && popup) {
+    popupToggle(popup);
+  }
+});
+
+
 // Заполнение форм профиля
 const formSubmitHandlerProfile = function (evt) {
   evt.preventDefault();
@@ -68,29 +77,29 @@ const openPopup = function () {
 
 // Массив мест
 const initialCards = [{
-  name: 'Архыз',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-},
-{
-  name: 'Челябинская область',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-},
-{
-  name: 'Иваново',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-},
-{
-  name: 'Камчатка',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-},
-{
-  name: 'Холмогорский район',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-},
-{
-  name: 'Байкал',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-}
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
 ];
 
 // Функция генерирования места
@@ -140,5 +149,9 @@ closeButtonPopupPlace.addEventListener('click', () => popupToggle(popupPlace));
 // Очищаем поля ввода места
 popupAddPlace.addEventListener('click', () => {
   formPopupPlace.reset();
+  //Отключаем кнопку
+  formPopupPlace.querySelector('.popup__button-save').classList.add('popup__button-save_disabled');
+  formPopupPlace.querySelector('.popup__button-save').setAttribute("disabled", "true");
+
   popupToggle(popupPlace);
 });

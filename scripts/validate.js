@@ -36,7 +36,6 @@ const checkInputValidity = (popupElement, inputElement) => {
 const setEventListeners = (popupElement) => {
   const inputList = Array.from(popupElement.querySelectorAll(params.inputSelector));
   const buttonElement = popupElement.querySelector(params.submitButtonSelector);
-  toggleButtonState(inputList, buttonElement);
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', function () {
       checkInputValidity(popupElement, inputElement);

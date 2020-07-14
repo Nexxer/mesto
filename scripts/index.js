@@ -16,7 +16,6 @@ const formPopupPlace = popupPlace.querySelector('#form-place');
 const placeInput = formPopupPlace.querySelector('#place-name');
 const linkInput = formPopupPlace.querySelector('#place-link');
 
-
 // Просмотр фото
 const popupImage = document.querySelector('.popup_type_photo');
 const placeImage = popupImage.querySelector('.popup__image');
@@ -25,6 +24,7 @@ const placeTitle = popupImage.querySelector('.popup__caption');
 // Открытие попапов
 const popupToggle = function (popupElement) {
   popupElement.classList.toggle('popup_opened');
+  addEsc()
 };
 
 // Закрытия попапов
@@ -37,28 +37,31 @@ const closePopupProfile = function (evt) {
     return
   }
   popupToggle(popupProfile);
+  removeEscape()
 }
 const closePopupImage = function (evt) {
   if (evt.target !== evt.currentTarget) {
     return
   }
   popupToggle(popupImage);
+  removeEscape()
 }
 const closePopupPlace = function (evt) {
   if (evt.target !== evt.currentTarget) {
     return
   }
   popupToggle(popupPlace);
+  removeEscape()
 };
 
-//Закрытие попапов через 'Esc'
-document.addEventListener('keydown', (evt) => {
+//Закрытие через Esc
+const keyEsc = (evt) => {
   const popup = document.querySelector('.popup_opened')
-  if (evt.key === 'Escape' && popup) {
-    popupToggle(popup);
+  if (evt.key === 'Escape') {
+    popupToggle(popup)
+    removeEscape()
   }
-});
-
+};
 
 // Заполнение форм профиля
 const formSubmitHandlerProfile = function (evt) {
@@ -155,3 +158,13 @@ popupAddPlace.addEventListener('click', () => {
 
   popupToggle(popupPlace);
 });
+
+
+//Добавление и удаление слушателя Esc для закрытия попапа
+function addEsc() {
+  window.addEventListener('keydown', keyEsc);
+};
+
+function removeEsc() {
+  window.removeEventListener('keydown', keyEsc);
+};

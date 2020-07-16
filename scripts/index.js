@@ -54,7 +54,7 @@ const closeButtonPopupImage = popupImage.querySelector('.popup__button-close');
 const closeButtonPopupPlace = popupPlace.querySelector('.popup__button-close');
 
 // Открытие попапов
-const handlePopupToggle = (popupElement) => {
+const openPopup = (popupElement) => {
   popupElement.classList.add('popup_opened');
   window.addEventListener('keydown', keyEsc);
 };
@@ -89,10 +89,10 @@ const formSubmitHandlerProfile = (evt) => {
 };
 
 // Заполняем ввод в попапе профиля текущими значениями профиля
-const openPopup = () => {
+const openPopupProfile = () => {
   nameInputProfile.value = profileName.textContent;
   jobInputProfile.value = profileProfession.textContent;
-  handlePopupToggle(popupProfile);
+  openPopup(popupProfile);
 };
 
 // функция добавления нового места
@@ -109,7 +109,7 @@ const disabledSave = (buttonElement) => {
 };
 
 // Слушаем события
-popupEditProfile.addEventListener('click', openPopup);
+popupEditProfile.addEventListener('click', openPopupProfile);
 popupProfile.addEventListener('click', closePopupClickOverlay);
 closeButtonPopupProfile.addEventListener('click', () => closePopup(popupProfile));
 formPopupProfile.addEventListener('submit', formSubmitHandlerProfile);
@@ -122,7 +122,7 @@ popupAddPlace.addEventListener('click', () => {
   formPopupPlace.reset();
   //Отключаем кнопку
   disabledSave(formPopupPlace.querySelector('.popup__button-save'));
-  handlePopupToggle(popupPlace);
+  openPopup(popupPlace);
 });
 
 // Функция генерирования места
@@ -141,7 +141,7 @@ const createNewPlace = (name, link) => {
     placeImage.src = evt.target.src;
     placeTitle.textContent = name;
     placeImage.alt = name;
-    handlePopupToggle(popupImage);
+    openPopup(popupImage);
   });
   return newPlace;
 };

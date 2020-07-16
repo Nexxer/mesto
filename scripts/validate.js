@@ -73,4 +73,10 @@ const toggleButtonState = (inputList, buttonElement) => {
   }
 };
 
+// Отключение кнопки "Сохранить"
+const disabledSave = (buttonElement) => {
+  buttonElement.classList.add('popup__button-save_disabled');
+  buttonElement.setAttribute("disabled", "true");
+};
+
 enableValidation(validationParams);

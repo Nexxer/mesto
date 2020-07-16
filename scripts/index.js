@@ -102,12 +102,6 @@ const formSubmitHandlerPlace = (evt) => {
   closePopup(popupPlace);
 };
 
-// Отключение кнопки "Сохранить"
-const disabledSave = (buttonElement) => {
-  buttonElement.classList.add('popup__button-save_disabled');
-  buttonElement.setAttribute("disabled", "true");
-};
-
 // Слушаем события
 popupEditProfile.addEventListener('click', openPopupProfile);
 popupProfile.addEventListener('click', closePopupClickOverlay);

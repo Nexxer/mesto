@@ -1,28 +1,32 @@
+import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
+
+
 // Массив мест
 const initialCards = [{
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
+  name: 'Архыз',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+},
+{
+  name: 'Челябинская область',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+},
+{
+  name: 'Иваново',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+},
+{
+  name: 'Камчатка',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+},
+{
+  name: 'Холмогорский район',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+},
+{
+  name: 'Байкал',
+  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+}
 ];
 
 // Профиль
@@ -42,6 +46,7 @@ const popupPlace = document.querySelector('.popup_type_add-place');
 const formPopupPlace = popupPlace.querySelector('#form-place');
 const placeInput = formPopupPlace.querySelector('#place-name');
 const linkInput = formPopupPlace.querySelector('#place-link');
+const formElement = document.querySelector('.popup__form');
 
 // Просмотр фото
 const popupImage = document.querySelector('.popup_type_photo');
@@ -98,7 +103,7 @@ const openPopupProfile = () => {
 // функция добавления нового места
 const formSubmitHandlerPlace = (evt) => {
   evt.preventDefault();
-  addPlace(placeInput.value, linkInput.value);
+  createNewPlace(placeInput.value, linkInput.value);
   closePopup(popupPlace);
 };
 
@@ -119,32 +124,38 @@ popupAddPlace.addEventListener('click', () => {
   openPopup(popupPlace);
 });
 
-// Функция генерирования места
+// Функция генерирования и вставки места
 const createNewPlace = (name, link) => {
-  const newPlace = placeTemplate.content.cloneNode(true);
-  const newPlaceTitle = newPlace.querySelector('.element__title');
-  const newPlaceImage = newPlace.querySelector('.element__image');
-  const newPlaceDelete = newPlace.querySelector('.element__delete');
-  const newPlaceLike = newPlace.querySelector('.element__like');
-  newPlaceTitle.textContent = name;
-  newPlaceImage.src = link;
-  newPlaceImage.alt = name;
-  newPlaceDelete.addEventListener('click', (evt) => evt.target.closest('.element').remove());
-  newPlaceLike.addEventListener('click', (evt) => evt.target.classList.toggle('elememt__like_active'));
-  newPlaceImage.addEventListener('click', function (evt) {
-    placeImage.src = evt.target.src;
-    placeTitle.textContent = name;
-    placeImage.alt = name;
-    openPopup(popupImage);
-  });
-  return newPlace;
+  const card = new Card(name, link, '#element');
+  const cardElement = card.generateCard();
+  placeList.prepend(cardElement);
 };
 
-// функция вставки места в DOM
-const addPlace = (name, link) => {
-  const placeNode = createNewPlace(name, link);
-  placeList.prepend(placeNode);
-};
 
-// генерация изначальных мест
-initialCards.reverse().forEach(place => addPlace(place.name, place.link));
+initialCards.forEach((item) => {
+  const card = new Card(item.name, item.link, '#element');
+  const cardElement = card.generateCard();
+  placeList.append(cardElement);
+});
+
+
+
+const validationParams = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button-save',
+  inactiveButtonClass: 'popup__button-save_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_active'
+}
+
+const formValidatorProfile = new FormValidator(validationParams, formElement);
+const formValidatorElement = new FormValidator(validationParams, formPopupPlace);
+formValidatorProfile.enableValidation();
+formValidatorElement.enableValidation();
+
+// Отключение кнопки "Сохранить"
+const disabledSave = (buttonElement) => {
+  buttonElement.classList.add('popup__button-save_disabled');
+  buttonElement.setAttribute("disabled", "true");
+};

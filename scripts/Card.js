@@ -1,3 +1,7 @@
+import {
+  openPopup, popupFigure
+} from './utils.js';
+
 export class Card {
   constructor(name, link, cardSelector) {
     this._name = name;
@@ -38,10 +42,10 @@ export class Card {
 
   _openPopup() {
     this._element.querySelector('.element__image').addEventListener('click', () => {
-      openPopup(popupImage);
-      placeImage.src = this._link;
-      placeTitle.textContent = this._name;
-      placeImage.alt = this._name;
+      openPopup(popupFigure);
+      popupFigure.querySelector('.popup__image').src = this._link;
+      popupFigure.querySelector('.popup__caption').textContent = this._name;
+      popupFigure.querySelector('.popup__image').alt = this._name;
     });
   }
 }

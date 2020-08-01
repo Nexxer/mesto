@@ -1,32 +1,39 @@
-import { Card } from './Card.js';
-import { FormValidator } from './FormValidator.js';
-
+import {
+  Card
+} from './Card.js';
+import {
+  FormValidator
+} from './FormValidator.js';
+import {
+  openPopup,
+  closePopup
+} from './utils.js';
 
 // Массив мест
 const initialCards = [{
-  name: 'Архыз',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-},
-{
-  name: 'Челябинская область',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-},
-{
-  name: 'Иваново',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-},
-{
-  name: 'Камчатка',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-},
-{
-  name: 'Холмогорский район',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-},
-{
-  name: 'Байкал',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-}
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
 ];
 
 // Профиль
@@ -58,30 +65,11 @@ const closeButtonPopupProfile = popupProfile.querySelector('.popup__button-close
 const closeButtonPopupImage = popupImage.querySelector('.popup__button-close');
 const closeButtonPopupPlace = popupPlace.querySelector('.popup__button-close');
 
-// Открытие попапов
-const openPopup = (popupElement) => {
-  popupElement.classList.add('popup_opened');
-  window.addEventListener('keydown', keyEsc);
-};
-
-const closePopup = (popup) => {
-  popup.classList.remove('popup_opened');
-  window.removeEventListener('keydown', keyEsc);
-};
-
 // Вызов функции закрытия попапа при клике на оверлей
 const closePopupClickOverlay = (event) => {
   const currentPopup = document.querySelector('.popup_opened');
   if (event.target === event.currentTarget) {
     closePopup(currentPopup);
-  }
-};
-
-//Закрытие через Esc
-const keyEsc = (evt) => {
-  const popup = document.querySelector('.popup_opened')
-  if (evt.key === 'Escape') {
-    closePopup(popup);
   }
 };
 
@@ -131,14 +119,11 @@ const createNewPlace = (name, link) => {
   placeList.prepend(cardElement);
 };
 
-
 initialCards.forEach((item) => {
   const card = new Card(item.name, item.link, '#element');
   const cardElement = card.generateCard();
   placeList.append(cardElement);
 });
-
-
 
 const validationParams = {
   formSelector: '.popup__form',

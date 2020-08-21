@@ -29,12 +29,12 @@
 
 ##  Технологии <a name = "getting_started"></a>
 
-*HTML
-*CSS
-*JS
-*Figma
-*БЭМ методология
-*webpack
+* HTML
+* CSS
+* JS
+* Figma
+* БЭМ методология
+* webpack
 
 ### Комманды
 

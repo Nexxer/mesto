@@ -1,113 +1,65 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://s3.mooc.ru/prod/source/origin/photos/companies/2404/large.png" alt="Project logo"></a>
+ <img width=200px height=200px src="https://sun9-58.userapi.com/xZpU-hlLA2D9nJyOgzdpzuYkhtS0DXo1UrQnXg/ROQJjyeeUl0.jpg" alt="Яндекс.Практикум"></a>
 </p>
 
 <h3 align="center">Проект "Место"</h3>
 
 <div align="center">
 
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-
 </div>
 
 ---
 
-<p align="center"> Few lines describing your project.
+<p align="center"> Создай свою галлерею фото!
     <br>
 </p>
 
 ## 📝 Table of Contents
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+- [О проекте](#about)
+- [Технологии](#getting_started)
+- [Комманды](#deployment)
 
-## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+## 🧐 О проекте <a name = "about"></a>
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+Это 8 проектная работа в Яндекс.Практикуме по курсу frontend-разработчик.
+В проектной работе опять рефакторинг. Создал ещё несколько классов и настроил связи между ними. Настроил сборку проекта Вебпаком.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+##  Технологии <a name = "getting_started"></a>
 
-### Prerequisites
+*HTML
+*CSS
+*JS
+*Figma
+*БЭМ методология
+*webpack
 
-What things you need to install the software and how to install them.
+### Комманды
 
-```
-Give examples
-```
+Скопируйте проект
 
-### Installing
+## Установка модулей
 
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+Для предварительной установки всех модулей выполнить комманду
 
 ```
-Give the example
+npm install
 ```
 
-And repeat
+## Запуск сборки для разработки
+
+Выполнить команду
 
 ```
-until finished
+npm run dev
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
+## Запуск финальной сборки
 
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Выполнить команду
 
 ```
-Give an example
+npm run build
 ```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
-
-## ⛏️ Built Using <a name = "built_using"></a>
-
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
-
-## ✍️ Authors <a name = "authors"></a>
-
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References

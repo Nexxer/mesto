@@ -1,20 +1,23 @@
 import {
-  openPopup, popupFigure
+  openPopup,
+  popupFigure
 } from './utils.js';
 
-export class Card {
-  constructor(name, link, cardSelector) {
+export default class Card {
+  constructor(name, link, cardSelector, {
+    cardClick
+  }) {
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
+    this._cardClick = cardClick;
   }
 
   _getTemplate() {
-    const cardElement = document
+    return document
       .querySelector(this._cardSelector)
       .content
       .cloneNode(true);
-    return cardElement;
   }
 
   generateCard() {
@@ -30,6 +33,7 @@ export class Card {
     this._clickLike();
     this._clickDelete();
     this._openPopup();
+    this._cardClickListener();
   }
 
   _clickLike() {
@@ -47,5 +51,8 @@ export class Card {
       popupFigure.querySelector('.popup__caption').textContent = this._name;
       popupFigure.querySelector('.popup__image').alt = this._name;
     });
+  }
+  _cardClickListener() {
+    this._element.querySelector('.element__image').addEventListener('click', () => this._cardClick(this._name, this._link));
   }
 }

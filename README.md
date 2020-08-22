@@ -1,18 +1,11 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://sun9-58.userapi.com/xZpU-hlLA2D9nJyOgzdpzuYkhtS0DXo1UrQnXg/ROQJjyeeUl0.jpg" alt="Яндекс.Практикум"></a>
-</p>
-
-<h3 align="center">Проект "Место"</h3>
-
-<div align="center">
-
-</div>
+<h1 align="center">Проект "Место"</h1>
+<a align="center" href="https://nexxer.github.io/mesto/">Ссылка на опубликованный проект в gh-pages</a>
 
 ---
 
 <p align="center"> Создай свою галлерею фото!
     <br>
+
 </p>
 
 ### 📝 Оглавление
@@ -20,6 +13,7 @@
 - [О проекте](#about)
 - [Технологии](#getting_started)
 - [Комманды](#deployment)
+
 
 
 ### 🧐 О проекте <a name = "about"></a>

@@ -1,8 +1,3 @@
-import {
-  openPopup,
-  popupFigure
-} from './utils.js';
-
 export default class Card {
   constructor(name, link, cardSelector, {
     cardClick
@@ -22,9 +17,10 @@ export default class Card {
 
   generateCard() {
     this._element = this._getTemplate();
-    this._element.querySelector('.element__image').src = this._link;
+    const elementImage = this._element.querySelector('.element__image');
+    elementImage.src = this._link;
     this._element.querySelector('.element__title').textContent = this._name;
-    this._element.querySelector('.element__image').alt = this._name;
+    elementImage.alt = this._name;
     this._setEventListeners();
     return this._element;
   }
@@ -32,7 +28,6 @@ export default class Card {
   _setEventListeners() {
     this._clickLike();
     this._clickDelete();
-    this._openPopup();
     this._cardClickListener();
   }
 
@@ -44,14 +39,6 @@ export default class Card {
     this._element.querySelector('.element__delete').addEventListener('click', (evt) => evt.target.closest('.element').remove());
   }
 
-  _openPopup() {
-    this._element.querySelector('.element__image').addEventListener('click', () => {
-      openPopup(popupFigure);
-      popupFigure.querySelector('.popup__image').src = this._link;
-      popupFigure.querySelector('.popup__caption').textContent = this._name;
-      popupFigure.querySelector('.popup__image').alt = this._name;
-    });
-  }
   _cardClickListener() {
     this._element.querySelector('.element__image').addEventListener('click', () => this._cardClick(this._name, this._link));
   }

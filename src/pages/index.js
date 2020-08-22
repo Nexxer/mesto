@@ -1,10 +1,10 @@
-import './../pages/index.css';
-import Card from './Card.js';
-import FormValidator from './FormValidator.js';
-import Section from './Section.js';
-import PopupWithImage from './PopupWithImage.js';
-import PopupWithForm from './PopupWithForm.js';
-import UserInfo from './UserInfo.js';
+import './index.css';
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
+import Section from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
 import {
   initialCards,
   popupButtonEditProfile,
@@ -19,7 +19,7 @@ import {
   formElement,
   popupImage,
   validationParams
-} from './Const.js';
+} from '../components/constants.js';
 
 //функция создания карточки
 function createCard(item) {
@@ -28,7 +28,7 @@ function createCard(item) {
     item.link,
     '#element', {
     cardClick: (name, link) => {
-      popupPicImage.open(name, link)
+      popupPicImage.open(name, link);
     }
   })
 }
@@ -47,6 +47,7 @@ const initialCardsArr = new Section({
 //выводим изначальный массив
 initialCardsArr.rendererCard();
 
+
 //открываем попап карточки
 const popupPicImage = new PopupWithImage(popupImage);
 popupPicImage.setEventListeners();
@@ -62,6 +63,7 @@ popupFormCard.setEventListeners();
 
 //открытие попапа для новой карточки
 popupAddPlace.addEventListener('click', () => {
+  removeFormErrors(popupPlace);
   popupFormCard.open();
 })
 
@@ -75,6 +77,7 @@ const popupEditProfile = new PopupWithForm(popupProfile, {
 })
 popupButtonEditProfile.addEventListener('click', () => {
   setInputValue(userInfo.getUserInfo());
+  removeFormErrors(popupProfile);
   popupEditProfile.open();
 });
 popupEditProfile.setEventListeners();
@@ -88,5 +91,12 @@ function setInputValue(info) {
 //валидация
 const formValidatorProfile = new FormValidator(validationParams, formElement);
 const formValidatorElement = new FormValidator(validationParams, formPopupPlace);
+
+//Скрываем ошибки валидации и дизейблим кнопку при открытии попапов
+const removeFormErrors = (formElement) => {
+  formValidatorElement.clearInputError(validationParams, formElement);
+  formValidatorProfile.clearInputError(validationParams, formElement);
+}
+
 formValidatorProfile.enableValidation();
 formValidatorElement.enableValidation();

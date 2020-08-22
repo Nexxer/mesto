@@ -10,7 +10,7 @@ export default class FormValidator {
   }
 
   //Вывод ошибки валидации
-  _showInputError = (inputElement, errorMessage) => {
+  _showInputError(inputElement, errorMessage) {
     const errorElement = this._inputElement.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = errorMessage;
@@ -18,7 +18,7 @@ export default class FormValidator {
   }
 
   //Скрытие ошибки валидации
-  _hideInputError = (inputElement) => {
+  _hideInputError(inputElement) {
     const errorElement = this._inputElement.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.classList.remove(this._errorClass);
@@ -26,7 +26,7 @@ export default class FormValidator {
   }
 
   //Проверка
-  _checkInputValidity = (inputElement) => {
+  _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
       this._showInputError(inputElement, inputElement.validationMessage);
     } else {
@@ -35,7 +35,7 @@ export default class FormValidator {
   }
 
   //Слушаем поля ввода
-  _setEventListeners = () => {
+  _setEventListeners() {
     const buttonElement = this._inputElement.querySelector(this._submitButtonSelector);
     const inputList = Array.from(this._inputElement.querySelectorAll(this._inputSelector));
     this._toggleButtonState(inputList, buttonElement);
@@ -49,14 +49,14 @@ export default class FormValidator {
   };
 
   //Проверка на валидность инпутов
-  _hasInvalidInput = (inputList) => {
+  _hasInvalidInput(inputList) {
     return inputList.some((inputErrorClass) => {
       return !inputErrorClass.validity.valid;
     });
   }
 
   //Переключаем кнопку по проверке валидности инпутов
-  _toggleButtonState = (inputList, buttonElement) => {
+  _toggleButtonState(inputList, buttonElement) {
     if (this._hasInvalidInput(inputList)) {
       buttonElement.classList.add(this._inactiveButtonClass);
       buttonElement.setAttribute('disabled', true);
@@ -66,8 +66,18 @@ export default class FormValidator {
     }
   }
 
+  //Функция отчистки форм от ошибок при открытии и отключение активности кнопке
+  clearInputError() {
+    const inputList = Array.from(this._inputElement.querySelectorAll(this._inputSelector));
+    inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement);
+      const buttonElement = this._inputElement.querySelector(this._submitButtonSelector);
+      this._toggleButtonState(inputList, buttonElement);
+    });
+  }
+
   //Валидация
-  enableValidation = () => {
+  enableValidation() {
     this._inputElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
     });

@@ -15,16 +15,21 @@ export default class Popup {
   }
 
   //Содержит приватный метод, который содержит логику закрытия попапа клавишей Esc.
-  _handleEscClose(evt) {
+  _handleEscClose = (evt) => {
     if (evt.key === 'Escape') {
       this.close();
     }
   }
 
-  //Содержит публичный метод, который добавляет слушатель клика иконке закрытия попапа.
+  //Содержит публичный метод, который добавляет слушатель клика иконке закрытия попапа или оверлею
   setEventListeners() {
     this._popupSelector.querySelector('.popup__button-close').addEventListener('click', () => {
       this.close();
+    })
+    this._popupSelector.addEventListener('mousedown', (evt) => {
+      if (evt.target === evt.currentTarget) {
+        this.close();
+      }
     })
   }
 }

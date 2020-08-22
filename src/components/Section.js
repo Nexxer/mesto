@@ -7,7 +7,7 @@ export default class Section {
 
   //публичный метод, который принимает DOM-элемент и добавляет его в контейнер.
   addItem(element) {
-    this._containerSelector.append(element);
+    this._containerSelector.prepend(element);
   }
 
   //публичный метод, который отвечает за отрисовку всех элементов. Отрисовка каждого отдельного элемента должна осуществляться функцией

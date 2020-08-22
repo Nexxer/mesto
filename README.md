@@ -1,5 +1,8 @@
 <h1 align="center">Проект "Место"</h1>
-<a align="center" href="https://nexxer.github.io/mesto/">Ссылка на опубликованный проект в gh-pages</a>
+
+<div align="center">
+<a href="https://nexxer.github.io/mesto/">Ссылка на опубликованный проект в gh-pages</a>
+</div>
 
 ---
 

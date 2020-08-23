@@ -22,15 +22,15 @@ import {
 } from '../components/constants.js';
 
 //функция создания карточки
-function createCard(item) {
+function createCard(data) {
   return new Card(
-    item.name,
-    item.link,
-    '#element', {
-    cardClick: (name, link) => {
-      popupPicImage.open(name, link);
-    }
-  })
+    {
+      data,
+      cardClick: (name, link) => {
+        popupPicImage.open(name, link);
+      }
+    },
+    '#element')
 }
 
 //вывод карточек

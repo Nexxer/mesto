@@ -1,9 +1,7 @@
 export default class Card {
-  constructor(name, link, cardSelector, {
-    cardClick
-  }) {
-    this._name = name;
-    this._link = link;
+  constructor({ data, cardClick }, cardSelector) {
+    this._name = data.name;
+    this._link = data.link;
     this._cardSelector = cardSelector;
     this._cardClick = cardClick;
   }
@@ -26,20 +24,16 @@ export default class Card {
   }
 
   _setEventListeners() {
-    this._clickLike();
-    this._clickDelete();
-    this._cardClickListener();
-  }
+    // Слушатель лайка
+    this._element.querySelector('.element__like').addEventListener('click', (evt) => { evt.target.classList.toggle('elememt__like_active') });
 
-  _clickLike() {
-    this._element.querySelector('.element__like').addEventListener('click', (evt) => evt.target.classList.toggle('elememt__like_active'));
-  }
+    // Слушатель удаления карточки
+    this._element.querySelector('.element__delete').addEventListener('click', (evt) => {
+      evt.target.closest('.element').remove();
+      this._element = null;
+    });
 
-  _clickDelete() {
-    this._element.querySelector('.element__delete').addEventListener('click', (evt) => evt.target.closest('.element').remove());
-  }
-
-  _cardClickListener() {
+    // Слушатель клика карточки
     this._element.querySelector('.element__image').addEventListener('click', () => this._cardClick(this._name, this._link));
   }
 }

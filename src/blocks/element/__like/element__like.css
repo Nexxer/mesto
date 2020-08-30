@@ -10,7 +10,8 @@
   outline: none;
   transition-duration: 0.8s;
   transition-property: opacity;
-
+  width: 21px;
+  height: 19px;
 }
 
 .element__like:hover {

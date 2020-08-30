@@ -58,7 +58,7 @@ export default class Card {
           if (res.likes.length >= 1) {
             this._placeLikes.textContent = res.likes.length;
           } else {
-            this._placeLikes.textContent = '';
+            this._placeLikes.textContent = '0';
           }
         })
         .catch((err) => {

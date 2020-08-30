@@ -1,7 +1,7 @@
 {
   "name": "praktikum",
-  "version": "1.0.0",
-  "description": "Yandex.Practice Project work 8",
+  "version": "1.0.9",
+  "description": "Yandex.Practice Project work",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf dist && webpack",
@@ -30,6 +30,5 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "core-js": "^3.6.5"
   }
 }

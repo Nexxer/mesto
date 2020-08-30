@@ -7,7 +7,7 @@ export default class FormValidator {
     this._inputErrorClass = validationparams.inputErrorClass;
     this._errorClass = validationparams.errorClass;
     this._inputElement = inputElement;
-  }
+  };
 
   //Вывод ошибки валидации
   _showInputError(inputElement, errorMessage) {
@@ -15,7 +15,7 @@ export default class FormValidator {
     inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = errorMessage;
     errorElement.classList.add(this._errorClass);
-  }
+  };
 
   //Скрытие ошибки валидации
   _hideInputError(inputElement) {
@@ -23,7 +23,7 @@ export default class FormValidator {
     inputElement.classList.remove(this._inputErrorClass);
     errorElement.classList.remove(this._errorClass);
     errorElement.textContent = '';
-  }
+  };
 
   //Проверка
   _checkInputValidity(inputElement) {
@@ -31,8 +31,8 @@ export default class FormValidator {
       this._showInputError(inputElement, inputElement.validationMessage);
     } else {
       this._hideInputError(inputElement);
-    }
-  }
+    };
+  };
 
   //Слушаем поля ввода
   _setEventListeners() {
@@ -53,7 +53,7 @@ export default class FormValidator {
     return inputList.some((inputErrorClass) => {
       return !inputErrorClass.validity.valid;
     });
-  }
+  };
 
   //Переключаем кнопку по проверке валидности инпутов
   _toggleButtonState(inputList, buttonElement) {
@@ -63,8 +63,8 @@ export default class FormValidator {
     } else {
       buttonElement.classList.remove(this._inactiveButtonClass);
       buttonElement.removeAttribute('disabled');
-    }
-  }
+    };
+  };
 
   //Функция отчистки форм от ошибок при открытии и отключение активности кнопке
   clearInputError() {
@@ -74,7 +74,7 @@ export default class FormValidator {
       const buttonElement = this._inputElement.querySelector(this._submitButtonSelector);
       this._toggleButtonState(inputList, buttonElement);
     });
-  }
+  };
 
   //Валидация
   enableValidation() {
@@ -82,5 +82,5 @@ export default class FormValidator {
       evt.preventDefault();
     });
     this._setEventListeners();
-  }
+  };
 }

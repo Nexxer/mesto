@@ -10,4 +10,12 @@
 @import url('./../blocks/popup/popup.css');
 @import url('./../blocks/popup/_opened/popup_opened.css');
 
+.element__likes-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.element__likes{
+  margin: 3px 0 0;
+}

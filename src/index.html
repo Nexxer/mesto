@@ -15,16 +15,18 @@
   </header>
 
   <main class="content">
-
     <!-- Профиль -->
     <section class="profile">
-      <img class="profile__avatar" src="./image/avatar.jpg" alt="Аватар">
+      <div class="profile__img">
+        <span class="profile__overlay"></span>
+        <img class="profile__avatar" src="#" alt="Аватар">
+      </div>
       <div class="profile__info">
         <div class="profile__title-row">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <h1 class="profile__name"></h1>
           <button class="profile__button-edit"></button>
         </div>
-        <p class="profile__profession">Исследователь океана</p>
+        <p class="profile__profession"></p>
       </div>
       <button class="profile__button-add"></button>
     </section>
@@ -36,10 +38,16 @@
         <template id="element">
           <li class="element">
             <img class="element__image" src="#" alt="">
-            <button class="element__delete"></button>
+
+            <!-- кнопку созданем теперь через JS в зависимости от id-->
+            <!-- <button class="element__delete"></button> -->
+
             <div class="element__info">
               <h2 class="element__title"></h2>
-              <button type="button" class="element__like"></button>
+              <div class="element__likes-container">
+                <button type="button" class="element__like"></button>
+                <p class="element__likes"></p>
+              </div>
             </div>
           </li>
         </template>
@@ -53,16 +61,30 @@
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
 
+  <!-- Модальное окно аватарки -->
+  <div class="popup popup_avatar">
+    <div class="popup__container">
+      <h2 class="popup__title">Обновить аватар</h2>
+      <form id="form-avatar" class="popup__form" novalidate>
+        <input id="avatar-link" type="url" name="avatar" class="popup__input" value="" placeholder="Ссылка на аватарку"
+          required>
+        <span id="avatar-link-error" class="popup__input_error"></span>
+        <button type="submit" class="popup__button-save">Сохранить</button>
+      </form>
+      <button class="popup__button-close"></button>
+    </div>
+  </div>
+
   <!-- Модальное окно профиля-->
   <div class="popup popup_type_profile">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
       <form id="form-profile" class="popup__form" novalidate>
-        <input id="profile-name" type="text" name="surname" class="popup__input" value="" placeholder="Имя" required
+        <input id="profile-name" type="text" name="name" class="popup__input" value="" placeholder="Имя" required
           minlength="2" maxlength="40">
         <span id="profile-name-error" class="popup__input_error"></span>
 
-        <input id="profile-profession" type="text" name="profession" class="popup__input popup__input_compl" value=""
+        <input id="profile-profession" type="text" name="about" class="popup__input popup__input_compl" value=""
           placeholder="О себе" required minlength="2" maxlength="200">
         <span id="profile-profession-error" class="popup__input_error"></span>
 
@@ -88,7 +110,7 @@
 
         <button id="button-save-place" type="submit" class="popup__button-save">Сохранить</button>
       </form>
-      <button class="popup__button-close popup__button-close_for_place"></button>
+      <button class="popup__button-close"></button>
     </div>
   </div>
 
@@ -99,8 +121,19 @@
       <figcaption class="popup__caption"></figcaption>
       <button class="popup__button-close popup__button-close_for_img"></button>
     </figure>
-
   </div>
+
+  <!-- Модальное окно удаления фото -->
+  <div class="popup popup_delete-card">
+    <div class="popup__container">
+      <h2 class="popup__title">Вы уверены?</h2>
+      <button class="popup__button-save" type="button">Да</button>
+      <button class="popup__button-close"></button>
+
+    </div>
+  </div>
+
+
 </body>
 
 </html>

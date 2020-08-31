@@ -1,5 +1,6 @@
 import './index.css';
 import Api from '../components/Api.js';
+import { setLoading } from '../utils/utils.js';
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
@@ -24,8 +25,8 @@ import {
   submitButton,
   editAvatarButton,
   popupAvatarSelector,
-  popupDeleteCard
-} from '../components/constants.js';
+  popupDeleteCard,
+} from '../utils/constants.js';
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-14',
@@ -52,19 +53,10 @@ formValidatorElement.enableValidation();
 formValidatorAvatar.enableValidation();
 
 //!Аватарка
-const setLoading = function (isLoading, submitButton) {
-  if (isLoading === true) {
-    submitButton.textContent = 'Сохранение...'
-  }
-  else {
-    submitButton.textContent = 'Сохранить'
-  }
-};
-
 const handleAvatar = function (itemAvatar) {
-  setLoading(true, submitButton);
+  setLoading(true);
   api
-    .newAvatar(itemAvatar.avatar)
+    .setNewAvatar(itemAvatar.avatar)
     .then((res) => {
       user.setUserAvatar(res.avatar);
       avatarPopup.close();
@@ -73,13 +65,13 @@ const handleAvatar = function (itemAvatar) {
       console.log(err);
     })
     .finally(() => {
-      setLoading(false, submitButton);
+      setLoading(false);
     })
 };
 
 const avatarPopup = new PopupWithForm(popupAvatarSelector, handleAvatar);
 avatarPopup.setEventListeners();
-editAvatarButton.addEventListener("click", () => {
+editAvatarButton.addEventListener('click', () => {
   removeFormErrors(popupAvatarSelector);
   avatarPopup.open();
 });
@@ -88,9 +80,9 @@ editAvatarButton.addEventListener("click", () => {
 const user = new UserInfo(profileName, profileProfession);
 
 const handleUserInfo = function (itemUser) {
-  setLoading(true, formPopupProfile.querySelector('.popup__button-save'));
+  setLoading(true);
   api
-    .newUserInfo(itemUser.name, itemUser.about)
+    .setUserInfo(itemUser.name, itemUser.about)
     .then((item) => {
       user.setUserInfo(item);
       popupEditProfile.close();
@@ -99,7 +91,7 @@ const handleUserInfo = function (itemUser) {
       console.log(err);
     })
     .finally(() => {
-      setLoading(false, formPopupProfile.querySelector('.popup__button-save'));
+      setLoading(false);
     });
 };
 
@@ -131,8 +123,7 @@ const renderCards = function (cards) {
       initialCardsArr.addItem(renderCard(item));
 
     },
-  },
-    '.elements__list'
+  }
   );
   return initialCardsArr;
 };
@@ -164,7 +155,7 @@ const renderCard = function (card) {
 };
 
 const addNewCard = function (card) {
-  setLoading(true, popupPlace.querySelector('.popup__button-save'));
+  setLoading(true);
   api
     .postNewCard(card.photoname, card.photolink)
     .then((card) => {
@@ -175,7 +166,7 @@ const addNewCard = function (card) {
       console.log(err);
     })
     .finally(() => {
-      setLoading(false, popupPlace.querySelector('.popup__button-save'));
+      setLoading(false);
     });
 };
 

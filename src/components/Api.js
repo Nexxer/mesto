@@ -20,7 +20,7 @@ export default class Api {
     }).then((res) => this._getResponseData(res));
   }
 
-  newUserInfo(name, about) {
+  setUserInfo(name, about) {
     return fetch(`${this.url}/users/me`, {
       method: "PATCH",
       headers: this.headers,
@@ -31,7 +31,7 @@ export default class Api {
     }).then((res) => this._getResponseData(res));
   }
 
-  newAvatar(avatar) {
+  setNewAvatar(avatar) {
     return fetch(`${this.url}/users/me/avatar`, {
       method: "PATCH",
       headers: this.headers,

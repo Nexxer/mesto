@@ -22,6 +22,7 @@
 .elememt__like_active{background-image:url(./src/imagep/like_active.svg)}
 .element__title{margin:0;font-weight:900;font-size:24px;line-height:29px;max-width:200px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
 .element__delete{background-image:url(./src/imagep/DeleteIcon.svg);position:absolute;right:15px;top:18px;height:19px;width:18px;background-repeat:no-repeat;border:none;box-sizing:border-box;background-color:transparent;background-position:50%;cursor:pointer;outline:none;transition-duration:.8s;transition-property:opacity}.element__delete:hover{opacity:.6}
+.element__delete_hide{visibility:hidden}
 .element{position:relative;border-radius:10px;background-color:#fff;display:flex;flex-direction:column;width:100%;list-style:none}
 .footer__copyright{margin:0}
 .footer{font-size:18px;line-height:22px;color:#545454}@media screen and (max-width:619px){.footer{padding-left:19px;font-size:14px;line-height:17px}}

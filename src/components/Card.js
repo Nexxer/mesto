@@ -29,12 +29,9 @@ export default class Card {
     this._placeLikes.textContent = this._likes.length;
 
     if (this._owner._id === this._myId) {
-      const cardDeleteButton = document.createElement('button');
-      cardDeleteButton.classList.add('element__delete');
-      this._element.querySelector('.element').appendChild(cardDeleteButton);
-      cardDeleteButton.addEventListener('click', () => {
-        this._openPopupDeleteCard(this._id);
-      });
+      const cardDeleteButton = place.querySelector('.element__delete');
+      cardDeleteButton.classList.remove('element__delete_hide')
+
     };
 
     this._likes.forEach((like) => {
@@ -83,6 +80,10 @@ export default class Card {
     });
     this._element.querySelector('.element__image').addEventListener('click', () => {
       this._openPopupWithImage(placeImage, placeName);
+    });
+
+    this._element.querySelector('.element__delete').addEventListener('click', () => {
+      this._openPopupDeleteCard(this._id);
     });
   };
 }
